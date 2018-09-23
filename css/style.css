@@ -309,14 +309,19 @@ input:focus, textarea:focus, select:focus, button:focus {
 	z-index: 2;
 }
 .prt_menu_wrapper{
-	text-align:center;
+    text-align:center;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    top: 20px;
+    position: absolute;
+    right: 10%;
 }
 .prt_menu_wrapper a{
-	position:absolute;
 	text-transform:uppercase;
 	color:#202020;
 	font-size:18px;
-	margin:0px auto;
+	margin:0px 15px;
 	z-index:1;
 	font-weight:500;
 	letter-spacing:5px;
@@ -352,26 +357,19 @@ input:focus, textarea:focus, select:focus, button:focus {
 .prt_menu_wrapper a.prt_top{
 	top:45px;
 	left:0px;
-	right:0px;
-	width:100px;
 }
 .prt_menu_wrapper a.prt_bottom{
 	bottom:45px;
 	left:0px;
 	right:0px;
-	width:150px;
 }
 .prt_menu_wrapper a.prt_left{
 	top:50%;
 	left:-15px;
-	transform: rotateZ(-90deg);
-	margin-top:-15px;
 }
 .prt_menu_wrapper a.prt_right{
 	top:50%;
 	right:0px;
-	transform: rotateZ(90deg);
-	margin-top:-15px;
 }
 /*---------- About css Start -------*/
 .prt_about_wrapper{
@@ -1394,6 +1392,16 @@ input:focus, textarea:focus, select:focus, button:focus {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+}
+@media screen and (max-width : 980px) {
+    .prt_menu_wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        right: auto;
+    }
+    .prt_home_wrapper {
+        background-position: center center;
+    }
 }
 /*---------- Main Wrapper css End -------*/
 /*---------- Responsive css Start -------*/
