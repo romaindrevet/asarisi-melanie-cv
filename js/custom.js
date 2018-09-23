@@ -5,6 +5,14 @@ Project: Portfolio Responsive HTML Template
 Version: 1.0.0
 Assigned to: ThemeForest
 -------------------------------------------------------------------*/
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
 (function($){
     "use strict";
       
@@ -13,11 +21,15 @@ Assigned to: ThemeForest
           jQuery("#status").fadeOut();
           jQuery("#preloader").delay(200).fadeOut("slow");
       });
-      
+
+      setTimeout(function() {
+        FB.CustomerChat.show();
+      }, 1500)
+
       // ready function
       jQuery(document).ready(function($){
-             var $this = $(window);
-      
+        var $this = $(window);
+        
       //bg window height Js
       var window_height = window.innerHeight;
           $(".prt_home_wrapper").css("height", window_height);
